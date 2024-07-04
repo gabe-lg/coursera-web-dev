@@ -1,0 +1,17 @@
+.navbar {
+  border-radius: 0%;
+}
+
+#content {
+  background-color: gray;
+  height: 1000px;
+  margin: 15px;
+}
+
+ul {
+  background-color: rgb(255, 100, 100);
+}
+
+li>a {
+  border: 1px solid white;
+}
