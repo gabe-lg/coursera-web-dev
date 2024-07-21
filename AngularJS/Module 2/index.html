@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Shopping List Check Off</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.5/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body ng-app="ShoppingListCheckOff">
+  <div class="container">
+    <h1>Shopping List Check Off</h1>
+    <div class="row">
+
+      <!-- To Buy List -->
+      <div class="col-md-6" ng-controller="ToBuyController as left">
+        <h2>To Buy:</h2>
+        <ul ng-repeat="item in left.list">
+          <li>Buy {{ item.quantity }} {{ item.name }} <button class="btn btn-default" ng-click="left.itemBought($index)"><span
+                class="glyphicon glyphicon-ok"></span> Bought</button></li>
+        </ul>
+        <div class="emptyMessage" ng-if="!left.list.length">Everything is bought!</div>
+      </div>
+
+      <!-- Already Bought List -->
+      <div class="col-md-6" ng-controller="AlreadyBoughtController as right">
+        <h2>Already Bought:</h2>
+        <ul ng-repeat="item in right.list">
+          <li>Bought {{ item.quantity }} {{ item.name }}</li>
+        </ul>
+        <div class="emptyMessage" ng-if="!right.list.length">Nothing bought yet.</div>
+      </div>
+    </div>
+  </div>
+
+  <script
+    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
