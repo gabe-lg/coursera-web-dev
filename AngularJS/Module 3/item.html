@@ -1,0 +1,13 @@
+<div>
+  <br />
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="item in items">
+      <h3>{{ item.name }}</h3>
+      {{ item.description }} <br /><br />
+      <button ng-click="onRemove({index: $index})">Don't want this one!</button>
+    </li>
+    <div class="list-group-item" ng-hide="items.length || !searched">
+      Nothing found.
+    </div>
+  </ul>
+</div>
