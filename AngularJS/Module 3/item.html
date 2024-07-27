@@ -2,9 +2,11 @@
   <br />
   <ul class="list-group">
     <li class="list-group-item" ng-repeat="item in items">
-      <h3>{{ item.name }}</h3>
-      {{ item.description }} <br /><br />
-      <button ng-click="onRemove({index: $index})">Don't want this one!</button>
+      <h3>{{ item.name }} ({{ item.short_name }})</h3>
+      Description: {{ item.description }} <br /><br />
+      <button class="btn btn-danger" ng-click="onRemove({index: $index})">
+        Don't want this one!
+      </button>
     </li>
     <div class="list-group-item" ng-hide="items.length || !searched">
       Nothing found.

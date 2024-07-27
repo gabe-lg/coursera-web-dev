@@ -47,7 +47,6 @@
     };
   }
 
-  FoundItemsDirective.$inject = [];
   function FoundItemsDirective() {
     return {
       templateUrl: "item.html",
